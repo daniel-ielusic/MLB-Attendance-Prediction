@@ -1,4 +1,4 @@
-# MLB Attendance Prediction and Promotion Analysis
+# Major League Baseball Attendance Prediction and Promotion Analysis
 
 ## Project Overview
 * Created a tool to predict attendance at Major League Baseball games (MAE ~ 3700) in order to help teams understand factors that drive attendance, better forecast demand, and optimize their promotional schedules.
