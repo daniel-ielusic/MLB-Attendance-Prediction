@@ -24,18 +24,18 @@
 Before diving into the model-building process, I completed extensive data preprocessing to enhance predictions and better understand the dataset.
 1. *Data Cleaning:* This process was relatively simple since there were no missing values, but I joined the data from disparate sources together and removed 4 games with extreme temperature outliers.
 2. *Feature Engineering:* Throughout the exploratory data analysis process I continuously created new features to better capture factors that affect attendance. Please reference the Analysis notebook for the full methodology, but I provide two examples below:
-  a. To limit overfitting while capturing the value of the day of week variable, I created a feature indicating whether a game was played on a Friday through Sunday, as the boxplot below shows that these games had higher overall attendance.
-  b. I created a variable to indicate whether a game was played on a holiday other than Labor Day, as these games often led to larger crowds as show in Figure 2.
-3. *Feature Scaling:* I normalized quantitative features in order to ensure they are on the same scale and more accurately assess feature importance.
-4. *One-Hot Encoding:* I one-hot encoded categorical data to convert these features into a suitable format for machine learning.
+   * To limit overfitting while capturing the value of the day of week variable, I created a feature indicating whether a game was played on a Friday through Sunday, as the boxplot below shows that these games had higher overall attendance.
+   * I created a variable to indicate whether a game was played on a holiday other than Labor Day, as these games often led to larger crowds as show in Figure 2.
+4. *Feature Scaling:* I normalized quantitative features in order to ensure they are on the same scale and more accurately assess feature importance.
+5. *One-Hot Encoding:* I one-hot encoded categorical data to convert these features into a suitable format for machine learning.
 
 ### Model Building:
 1. *Train-Test-Split:* I used 70% of the data as a training set and 30% as a test set to evaluate model performance.
 2. *Hyperparameter Tuning:* After building a random forest regression pipeline, I used a grid search to find the ideal number of trees in the forest, maximum depth of each tree, minimum number of samples to split a node, minimum number of samples required for a leaf node, and maximum number of features.
-3. *Model Evaluation and Selection:* I used mean absolute error and R<sup>2</sup> to evaluate model performance and decided to use the random forest model over the linear regression model. The best-performing random forest regression model had the following metrics:
+4. *Model Evaluation and Selection:* I used mean absolute error and R<sup>2</sup> to evaluate model performance and decided to use the random forest model over the linear regression model. The best-performing random forest regression model had the following metrics:
    * Mean Absolute Error: 3704
    * R<sup>2</sup>: 0.725
-4. *Feature Importance:* To determine the relative importance of each feature in the models, I calculated the coefficients for the linear regression model, as well as GINI importance and SHAP values for the random forest regression. Figure 3 shows the importance rank of each feature by method.
+5. *Feature Importance:* To determine the relative importance of each feature in the models, I calculated the coefficients for the linear regression model, as well as GINI importance and SHAP values for the random forest regression. Figure 3 shows the importance rank of each feature by method.
 
 Figure 1: Attendance by Day of Week
 
